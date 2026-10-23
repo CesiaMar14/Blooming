@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balandú - Café Literario</title>
-    <meta name="description" content="Balandú, Café literario en Barranquilla, Colombia. Disfruta de un ambiente acogedor, libros del mes, menú variado y eventos culturales.">
-    <meta property="og:title" content="Balandú - Café Literario">
+    <title>Blooming - Café & Libros</title>
+    <meta name="description" content="Blooming, Café literario en Barranquilla, Colombia. Disfruta de un ambiente acogedor, libros del mes, menú variado para acompañar tus lecturas y eventos culturales.">
+    
+    <meta property="og:title" content="Blooming - Café & Libros">
     <meta property="og:description" content="Donde el café y las buenas historias se encuentran. Café literario en Barranquilla, Colombia.">
+    <meta property="og:site_name" content="Blooming">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cesiamar14.github.io/Balandu/index.html">
-    <meta property="og:image" content="https://cesiamar14.github.io/Balandu/imagenes/og-imagen.png">
+    <meta property="og:url" content="https://cesiamar14.github.io/Blooming/index.html">
+    <meta property="og:image" content="https://cesiamar14.github.io/Blooming/imagenes/og-imagen.png">
     <meta property="og:locale" content="es_CO">
-    <link rel="canonical" href="https://cesiamar14.github.io/Balandu/index.html">
-    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="canonical" href="https://cesiamar14.github.io/Blooming/index.html">
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Sen:wght@400..800&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
    <header>
@@ -27,38 +30,29 @@
         </button>    
 
         <a href="index.html" class="encabezado-marca">
-            <img src="imagenes/logo-balandu-circulo.png" alt="Logo circular de Balandú" class="logo-circular"> 
-            <p class="nombre-marca">Balandú</p>
+            <img src="imagenes/logo-ovalo.png" alt="Logo ovalado de Blooming" class="logo-ovalado"> 
+            <p class="nombre-marca">Blooming</p>
         </a>    
         
         <form class="buscador" role="search">
             <button type="submit" class="buscador-boton" aria-label="Buscar">
                 <i class="ti ti-search" aria-hidden="true"></i>
             </button>
-            <label for="buscar" class="sr-only">Buscar en Balandú</label>
+            <label for="buscar" class="sr-only">Buscar en el sitio</label>
             <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
         </form>
 
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="menu.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Menú</a></li>
+                <li><a href="libros.html"><i class="ti ti-books" aria-hidden="true"></i> Libros del mes</a></li>
+                <li><a href="eventos.html"><i class="ti ti-calendar-event" aria-hidden="true"></i> Eventos</a></li>
                 <li><a href="index.html#contacto"><i class="ti ti-mail" aria-hidden="true"></i> Contacto</a></li>
             </ul>
         </nav>
 
         <div class="encabezado-iconos">
-            <div class="selector-idioma">
-                <button type="button" class="selector-idioma-boton" aria-expanded="false" aria-controls="idioma-desplegable" aria-label="Cambiar idioma">
-                    <i class="ti ti-world" aria-hidden="true"></i>
-                    <span class="idioma-actual">ES</span>
-                </button>
-                <ul class="idioma-desplegable" id="idioma-desplegable" aria-label="Opciones de idioma">
-                    <li><button type="button" class="idioma-opcion" data-idioma="es">Español</button></li>
-                    <li><button type="button" class="idioma-opcion" data-idioma="en">English</button></li>
-                </ul>
-            </div>
-            
-            <button type="button" aria-label="Mi cuenta">
+             <button type="button" aria-label="Mi cuenta">
                 <i class="ti ti-user" aria-hidden="true"></i>
             </button>
 
@@ -74,9 +68,9 @@
             </button>
             <ul>
                 <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#libros-del-mes">Libros del mes</a></li>
+                <li><a href="libros.html">Libros del mes</a></li>
                 <li><a href="menu.html">Menú</a></li>
-                <li><a href="index.html#eventos">Eventos</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
                 <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
@@ -86,45 +80,29 @@
     <main>
         <section id="inicio" class="hero">
             <div class="hero-contenido"> 
-                <h1>Bienvenidos a Balandú</h1>
-                <p>Un lugar donde el café y la lectura se encuentran.</p>
-                <a href="#libros-del-mes" class="boton">Explorar libros del mes <i class="ti ti-arrow-right" aria-hidden="true"></i>
-                </a>
-            </div>
-            
-            <div class="hero-decoracion" aria-hidden="true">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-1">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-2">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-3">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-4">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-5">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-6">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-7">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-8">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-9">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-10">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-11">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-12">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-13">
-                <img src="imagenes/taza-de-cafe.png" class="taza taza-14">
+                <h1>
+                    <span class="hero-saludo">Bienvenidos a</span>
+                    <img src="imagenes/logo-completo.png" alt="Blooming, Café & Libros" class="logo-hero">
+                </h1>
+                <a href="#libros-del-mes" class="boton">Explora nuestros libros del mes </a>
             </div>
 
-            <div class="hero-portadas">
+            <div class="hero-portadas" aria-hidden="true">
                 <div class="hero-portadas-track">
                     <img src="imagenes/lost-lambs.jpg" alt="Lost lambs">
                     <img src="imagenes/la-quimica-del-amor.jpg" alt="La química del amor">
                     <img src="imagenes/lagrimas-en-h-mart.jpg" alt="Lágrimas en H Mart">
                     <img src="imagenes/just-kids.jpg" alt="Just kids">
-                    <img src="imagenes/la-edad-de-la-inocencia.png" alt="La edad de la inocencia">
+                    <img src="imagenes/la-edad-de-la-inocencia.jpg" alt="La edad de la inocencia">
                     <img src="imagenes/la-guerra-de-la-amapola.jpg" alt="La guerra de la amapola">
                     <img src="imagenes/2666.jpg" alt="2666">
                     <img src="imagenes/martyr.jpg" alt="Martyr!">
                     <img src="imagenes/gente-normal.jpg" alt="Gente normal">
                     <img src="imagenes/la-casa-en-el-mar-mas-azul.jpg" alt="La casa en el mar más azul">
-                    <img src="imagenes/mantequilla.png" alt="Mantequilla">
+                    <img src="imagenes/mantequilla.jpg" alt="Mantequilla">
                     <img src="imagenes/la-asistenta.jpg" alt="La asistenta">
                     <img src="imagenes/te-di-ojos-y-miraste-las-tinieblas.jpg" alt="Te di ojos y miraste las tinieblas">
-                    <img src="imagenes/aburridisima.png" alt="Aburridísima">
+                    <img src="imagenes/aburridisima.jpg" alt="Aburridísima">
                     <img src="imagenes/fruit-fly.jpg" alt="Fruit fly">
                     <img src="imagenes/la-novela-del-verano.jpg" alt="La novela del verano">
                     <img src="imagenes/intermezzo.jpg" alt="Intermezzo">
@@ -132,158 +110,184 @@
                     <img src="imagenes/la-quimica-del-amor.jpg" alt="La química del amor">
                     <img src="imagenes/lagrimas-en-h-mart.jpg" alt="Lágrimas en H Mart">
                     <img src="imagenes/just-kids.jpg" alt="Just kids">
-                    <img src="imagenes/la-edad-de-la-inocencia.png" alt="La edad de la inocencia">
+                    <img src="imagenes/la-edad-de-la-inocencia.jpg" alt="La edad de la inocencia">
                     <img src="imagenes/la-guerra-de-la-amapola.jpg" alt="La guerra de la amapola">
                     <img src="imagenes/2666.jpg" alt="2666">
                     <img src="imagenes/martyr.jpg" alt="Martyr!">
                     <img src="imagenes/gente-normal.jpg" alt="Gente normal">
                     <img src="imagenes/la-casa-en-el-mar-mas-azul.jpg" alt="La casa en el mar más azul">
-                    <img src="imagenes/mantequilla.png" alt="Mantequilla">
+                    <img src="imagenes/mantequilla.jpg" alt="Mantequilla">
                     <img src="imagenes/la-asistenta.jpg" alt="La asistenta">
                     <img src="imagenes/te-di-ojos-y-miraste-las-tinieblas.jpg" alt="Te di ojos y miraste las tinieblas">
-                    <img src="imagenes/aburridisima.png" alt="Aburridísima">
+                    <img src="imagenes/aburridisima.jpg" alt="Aburridísima">
                     <img src="imagenes/fruit-fly.jpg" alt="Fruit fly">
                     <img src="imagenes/la-novela-del-verano.jpg" alt="La novela del verano">
                     <img src="imagenes/intermezzo.jpg" alt="Intermezzo">
-                </div>
             </div>
         </section>
        
         <section id="libros-del-mes" class="libros-del-mes">
             <h2>Libros del mes</h2>
-            <p>Descubre nuestras selecciones literarias elegidas por nuestros clientes.</p>
+            <p>Libros que no hemos podido dejar de recomendar este mes. Explora y encuentra tu próxima lectura.</p>
             
-            <div class="carrusel carrusel-libros" id="carrusel-libros">
-                <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Libro anterior">&#10094;</button>
+            <div class="carrusel carrusel-libros" id="carrusel-libros" data-visibles="3">
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Libros anteriores">&#10094;</button>
                  
                 <div class="carrusel-contenedor" id="carrusel-contenedor-libros">
                     <div class="carrusel-track">
-                        <div class="carrusel-item activo">
-                            <img src="imagenes/en-diciembre-llegaban-las-brisas.jpg" alt="En diciembre llegaban las brisas">
+                        <div class="carrusel-item">
+                            <img src="imagenes/en-diciembre-llegaban-las-brisas.jpg" alt="Portada de En diciembre llegaban las brisas">
                             <p class="carrusel-titulo">En diciembre llegaban las brisas</p>
                             <p class="carrusel-autor">Marvel Moreno</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=brisas" class="carrusel-enlace" aria-label="Ver más sobre En diciembre llegaban las brisas">Ver más</a>
                         </div>
 
                         <div class="carrusel-item">
-                            <img src="imagenes/amanecer-en-la-cosecha.jpg" alt="Amanecer en la cosecha">
+                            <img src="imagenes/amanecer-en-la-cosecha.jpg" alt="Portada de Amanecer en la cosecha">
                             <p class="carrusel-titulo">Amanecer en la cosecha</p>
                             <p class="carrusel-autor">Suzanne Collins</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=cosecha" class="carrusel-enlace" aria-label="Ver más sobre Amanecer en la cosecha">Ver más</a>
                         </div>
 
                         <div class="carrusel-item">
-                            <img src="imagenes/el-cuento-de-la-criada.jpg" alt="El cuento de la criada">
+                            <img src="imagenes/el-cuento-de-la-criada.jpg" alt="Portada de El cuento de la criada">
                             <p class="carrusel-titulo">El cuento de la criada</p>
                             <p class="carrusel-autor">Margaret Atwood</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=criada" class="carrusel-enlace" aria-label="Ver más sobre El cuento de la criada">Ver más</a>
                         </div>
 
                         <div class="carrusel-item">
-                            <img src="imagenes/lo-que-no-tiene-nombre.jpg" alt="Lo que no tiene nombre">
+                            <img src="imagenes/lo-que-no-tiene-nombre.jpg" alt="Portada de Lo que no tiene nombre">
                             <p class="carrusel-titulo">Lo que no tiene nombre</p>
                             <p class="carrusel-autor">Piedad Bonnett</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=nombre" class="carrusel-enlace" aria-label="Ver más sobre Lo que no tiene nombre">Ver más</a>
                         </div>
 
                         <div class="carrusel-item">
-                            <img src="imagenes/la-vegetariana.png" alt="La vegetariana">
+                            <img src="imagenes/la-vegetariana.jpg" alt="Portada de La vegetariana">
                             <p class="carrusel-titulo">La vegetariana</p>
                             <p class="carrusel-autor">Han Kang</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=vegetariana" class="carrusel-enlace" aria-label="Ver más sobre La vegetariana">Ver más</a>
                         </div>
 
                         <div class="carrusel-item">
-                            <img src="imagenes/yesteryear.jpg" alt="Yesteryear">
+                            <img src="imagenes/yesteryear.jpg" alt="Portada de Yesteryear">
                             <p class="carrusel-titulo">Yesteryear</p>
                             <p class="carrusel-autor">Caro Claire Burke</p>
-                            <a href="#" class="carrusel-enlace">Ver más</a>
+                            <a href="libros.html?libro=yesteryear" class="carrusel-enlace" aria-label="Ver más sobre Yesteryear">Ver más</a>
                         </div>
                     </div>
                 </div>
 
-                <button class="carrusel-flecha carrusel-flecha--der" aria-label="Siguiente libro">&#10095;</button>
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Siguientes libros">&#10095;</button>
             
                 <div class="carrusel-indicadores">
-                    <button class="carrusel-indicador activo" data-indice="0" aria-label="Ir al libro 1"></button>
-                    <button class="carrusel-indicador" data-indice="1" aria-label="Ir al libro 2"></button>
-                    <button class="carrusel-indicador" data-indice="2" aria-label="Ir al libro 3"></button>
-                    <button class="carrusel-indicador" data-indice="3" aria-label="Ir al libro 4"></button>
-                    <button class="carrusel-indicador" data-indice="4" aria-label="Ir al libro 5"></button>
-                    <button class="carrusel-indicador" data-indice="5" aria-label="Ir al libro 6"></button>
+                    <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver libros 1 a 3"></button>
+                    <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver libros 4 a 6"></button>
                 </div>
             </div>
         </section>
 
-        <section id="menu" class="menu">
-            <h2>Menú</h2>
-            <p>Descubre y explora nuestra selección de bebidas, comidas, postres y deliciosos especiales.</p>
-            <a href="menu.html" class="boton-menu">Conoce nuestro menú</a>
+        <div class="separador" aria-hidden="true">
+            <div class="separador-track">
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Menú</span><span class="separador-barra">|</span>
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Eventos</span><span class="separador-barra">|</span>
+                </div>
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Menú</span><span class="separador-barra">|</span>
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Eventos</span><span class="separador-barra">|</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="menu" class="menu-inicio">
+            <div class="texto-menu-inicio">
+                <h2>Menú</h2>
+                <p>Descubre y explora nuestra selección de bebidas, comidas, postres y deliciosos especiales.</p>
+                <a href="menu.html" class="boton-menu">Conoce nuestro menú</a>
+            </div>
+            <div class="imagenes-menu-inicio">
+                <img src="imagenes/menu-1.jpg" alt="">
+                <img src="imagenes/menu-2.jpg" alt="">
+                <img src="imagenes/menu-3.jpg" alt="">
+            </div>
         </section>
 
-        <section id="eventos" class="eventos">
-            <div class="eventos-intro">
+        <div class="divisor-cuadros" aria-hidden="true">
+
+        <section id="eventos" class="eventos-inicio">
+            <div class="texto-eventos-inicio">
                 <h2>Eventos</h2>
-                <p>Participa en nuestros eventos, que van desde clubes de lectura, talleres de escritura y presentaciones de libros, hasta exposiciones, charlas y talleres.</p>
-                <p>Descubre nuevas oportunidades para aprender eligiendo una fecha en nuestro calendario para que puedas ver los eventos programados y su disponibilidad.</p>
+                <p>Participa en nuestros eventos, que van desde nuestro club de lectura, talleres de escritura, talleres de manualidades, presentaciones de libros, hasta exposiciones y charlas.</p>
+                <p>Descubre nuevas oportunidades para aprender. Entra a nuestro calendario para que puedas ver los eventos programados y su disponibilidad.</p>
+                <a href="eventos.html" class="boton-eventos">¡Participa en nuestros eventos!</a>
             </div>
 
-            <div class="calendario" id="calendario-eventos">
-                <div class="calendario-header">
-                    <button class="calendario-nav calendario-nav-anterior" id="mes-anterior" aria-label="Mes anterior">&#10094;</button>
-                    <h3 class="calendario-mes" id="calendario-mes"></h3>
-                    <button class="calendario-nav calendario-nav-siguiente" id="mes-siguiente" aria-label="Mes siguiente">&#10095;</button>
+            <div class="carrusel carrusel-eventos" data-visibles="1">
+                <div class="carrusel-contenedor">
+                    <div class="carrusel-track">
+                        <div class="carrusel-item">
+                            <img src="imagenes/evento-1.jpg" alt="Evento 1">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/evento-2.jpg" alt="Evento 2">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/evento-3.jpg" alt="Evento 3">
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="calendario-dias-semana">
-                    <span>Lun</span>
-                    <span>Mar</span>        
-                    <span>Mié</span>
-                    <span>Jue</span>
-                    <span>Vie</span>
-                    <span>Sáb</span>
-                    <span>Dom</span>
+            <div class="carrusel-indicadores">
+                    <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver evento 1"></button>
+                    <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver evento 2"></button>
+                    <button type="button" class="carrusel-indicador" data-indice="2" aria-label="Ver evento 3"></button>
                 </div>
-
-                <div class="calendario-grid" id="calendario-grid"></div>
-            </div>
-
-            <div class="dia-detalle" id="dia-detalle" hidden>
-                <button class="cerrar-dia-detalle" id="cerrar-dia-detalle" aria-label="Cerrar detalles del día">
-                    <i class="ti ti-x" aria-hidden="true"></i>
-                </button>
-                <h3 id="dia-detalle-fecha"></h3>
-                <div id="dia-detalle-lista" class="dia-detalle-lista"></div>
-            </div>
         </section>
 
         <section id="sobre-nosotros" class="sobre-nosotros">
             <h2>Sobre nosotros</h2>
-            <p>Balandú es más que un café o una librería; es un espacio donde la literatura, la cultura y la comunidad se unen. Es un lugar pensado para detenerse, conversar, descubrir un buen libro y disfrutar de un buen café.</p>
+            <p><span class="nombre-en-texto">Blooming</span> es más que un café o una librería; es un espacio donde la literatura, la cultura y la comunidad se unen. Es un lugar pensado para detenerse, conversar, descubrir un buen libro y disfrutar de un buen café.</p>
             <p>Está abierto a quien busque una pausa distinta en su día: desde quien llega por una buena taza de café, pasando por quien busca un rincón tranquilo para leer, hasta quien desea participar en nuestros eventos.</p>
-            <p>Balandú te espera con las puertas abiertas.</p>
+            <p> Nuestro nombre viene del <i lang="en">bloom</i>, ese instante en el que el café recién molido se abre al primer contacto con el agua. Pero también del concepto de florecer, abrirnos a experiencias, sabores y lecturas nuevas para crecer.</p>
 
-            <div class="carrusel carrusel-sobre-nosotros" id="carrusel-sobre-nosotros">
-                <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Imagen anterior">&#10094;</button>
+            <div class="carrusel carrusel-sobre-nosotros" id="carrusel-sobre-nosotros" data-visibles="3">
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Imágenes anteriores">&#10094;</button>
                 
                 <div class="carrusel-contenedor" id="carrusel-contenedor-sobre-nosotros">
-                    <div class="carrusel-item activo">
-                        <img src="imagenes/cafe-literario-1.jpg" alt="Café literario 1">
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="imagenes/cafe-literario-2.jpg" alt="Café literario 2">
-                    </div>
-                    <div class="carrusel-item">
-                        <img src="imagenes/cafe-literario-3.jpg" alt="Café literario 3">
+                    <div class="carrusel-track">
+                            <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-1.jpg" alt="Café literario 1">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-2.jpg" alt="Café literario 2">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-3.jpg" alt="Café literario 3">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-4.jpg" alt="Café literario 4">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-5.jpg" alt="Café literario 5">
+                        </div>
+                        <div class="carrusel-item">
+                            <img src="imagenes/cafe-literario-6.jpg" alt="Café literario 6">
+                        </div>
                     </div>
                 </div>
 
-                <button class="carrusel-flecha carrusel-flecha--der" aria-label="Siguiente imagen">&#10095;</button>
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Siguientes imágenes">&#10095;</button>
 
                 <div class="carrusel-indicadores">
-                    <button class="carrusel-indicador activo" data-indice="0" aria-label="Ir a la imagen 1"></button>
-                    <button class="carrusel-indicador" data-indice="1" aria-label="Ir a la imagen 2"></button>
-                    <button class="carrusel-indicador" data-indice="2" aria-label="Ir a la imagen 3"></button>
+                   <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver imágenes 1 a 3"></button>
+                    <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver imágenes 4 a 6"></button>
                 </div>
             </div>
         </section>
@@ -333,7 +337,7 @@
     </main>
     <footer>
         <div class="footer-marca">
-            <h3>Balandú</h3>
+            <h3></h3>
             <p>Donde el café y las buenas historias se encuentran.</p>
         </div>
 
@@ -349,9 +353,9 @@
             </a>
         </div>
 
-        <p class="footer-direccion"><i class="ti ti-map-pin" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
+        <p class="footer-direccion"><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
 
-        <p class="footer-copy">&copy; 2026 Balandú. Todos los derechos reservados.</p>
+        <p class="footer-copy">&copy; 2026 . Todos los derechos reservados.</p>
     </footer>
 
     <button type="button" class="carrito-boton-flotante" aria-label="Abrir carrito" aria-expanded="false" aria-controls="carrito-panel">
