@@ -11,11 +11,11 @@
     <meta property="og:site_name" content="Blooming">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cesiamar14.github.io/Blooming/index.html">
-    <meta property="og:image" content="https://cesiamar14.github.io/Blooming/imagenes/og-imagen.png">
+    <meta property="og:image" content="https://cesiamar14.github.io/Blooming/imagenes/og-imagen.jpg">
     <meta property="og:locale" content="es_CO">
 
     <link rel="canonical" href="https://cesiamar14.github.io/Blooming/index.html">
-    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,8 @@
         </button>    
 
         <a href="index.html" class="encabezado-marca">
-            <img src="imagenes/logo-ovalo.png" alt="Logo ovalado de Blooming" class="logo-ovalado"> 
-            <p class="nombre-marca">Blooming</p>
-        </a>    
+            <img src="imagenes/logo-header.svg" alt="Blooming" class="logo-header">
+        </a> 
         
         <form class="buscador" role="search">
             <button type="submit" class="buscador-boton" aria-label="Buscar">
@@ -45,7 +44,7 @@
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="menu.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Menú</a></li>
-                <li><a href="libros.html"><i class="ti ti-books" aria-hidden="true"></i> Libros del mes</a></li>
+                <li><a href="libros.html"><i class="ti ti-books" aria-hidden="true"></i> Libros</a></li>
                 <li><a href="eventos.html"><i class="ti ti-calendar-event" aria-hidden="true"></i> Eventos</a></li>
                 <li><a href="index.html#contacto"><i class="ti ti-mail" aria-hidden="true"></i> Contacto</a></li>
             </ul>
@@ -67,8 +66,8 @@
                 <i class="ti ti-x" aria-hidden="true"></i>
             </button>
             <ul>
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="libros.html">Libros del mes</a></li>
+                <li><a href="index.html#inicio" aria-current="page">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
                 <li><a href="menu.html">Menú</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
@@ -82,7 +81,7 @@
             <div class="hero-contenido"> 
                 <h1>
                     <span class="hero-saludo">Bienvenidos a</span>
-                    <img src="imagenes/logo-completo.png" alt="Blooming, Café & Libros" class="logo-hero">
+                    <img src="imagenes/logo-hero.svg" alt="Blooming, Café & Libros" class="logo-hero">
                 </h1>
                 <a href="#libros-del-mes" class="boton">Explora nuestros libros del mes </a>
             </div>
@@ -92,7 +91,7 @@
                     <img src="imagenes/lost-lambs.jpg" alt="Lost lambs">
                     <img src="imagenes/la-quimica-del-amor.jpg" alt="La química del amor">
                     <img src="imagenes/lagrimas-en-h-mart.jpg" alt="Lágrimas en H Mart">
-                    <img src="imagenes/just-kids.jpg" alt="Just kids">
+                    <img src="imagenes/just-kids.jpg" alt="Just kids" >
                     <img src="imagenes/la-edad-de-la-inocencia.jpg" alt="La edad de la inocencia">
                     <img src="imagenes/la-guerra-de-la-amapola.jpg" alt="La guerra de la amapola">
                     <img src="imagenes/2666.jpg" alt="2666">
@@ -109,7 +108,7 @@
                     <img src="imagenes/lost-lambs.jpg" alt="Lost lambs">
                     <img src="imagenes/la-quimica-del-amor.jpg" alt="La química del amor">
                     <img src="imagenes/lagrimas-en-h-mart.jpg" alt="Lágrimas en H Mart">
-                    <img src="imagenes/just-kids.jpg" alt="Just kids">
+                    <img src="imagenes/just-kids.jpg" alt="Just kids" >
                     <img src="imagenes/la-edad-de-la-inocencia.jpg" alt="La edad de la inocencia">
                     <img src="imagenes/la-guerra-de-la-amapola.jpg" alt="La guerra de la amapola">
                     <img src="imagenes/2666.jpg" alt="2666">
@@ -123,6 +122,7 @@
                     <img src="imagenes/fruit-fly.jpg" alt="Fruit fly">
                     <img src="imagenes/la-novela-del-verano.jpg" alt="La novela del verano">
                     <img src="imagenes/intermezzo.jpg" alt="Intermezzo">
+                </div>
             </div>
         </section>
        
@@ -131,7 +131,9 @@
             <p>Libros que no hemos podido dejar de recomendar este mes. Explora y encuentra tu próxima lectura.</p>
             
             <div class="carrusel carrusel-libros" id="carrusel-libros" data-visibles="3">
-                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Libros anteriores">&#10094;</button>
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Libros anteriores">
+                    <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                </button>
                  
                 <div class="carrusel-contenedor" id="carrusel-contenedor-libros">
                     <div class="carrusel-track">
@@ -179,8 +181,10 @@
                     </div>
                 </div>
 
-                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Siguientes libros">&#10095;</button>
-            
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Libros siguientes">
+                    <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                </button>
+                                
                 <div class="carrusel-indicadores">
                     <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver libros 1 a 3"></button>
                     <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver libros 4 a 6"></button>
@@ -218,7 +222,7 @@
             </div>
         </section>
 
-        <div class="divisor-cuadros" aria-hidden="true">
+        <div class="divisor-cuadros" aria-hidden="true"></div>
 
         <section id="eventos" class="eventos-inicio">
             <div class="texto-eventos-inicio">
@@ -229,7 +233,7 @@
             </div>
 
             <div class="carrusel carrusel-eventos" data-visibles="1">
-                <div class="carrusel-contenedor">
+                <div class="carrusel-contenedor" id="carrusel-contenedor-eventos">
                     <div class="carrusel-track">
                         <div class="carrusel-item">
                             <img src="imagenes/evento-1.jpg" alt="Evento 1">
@@ -245,10 +249,10 @@
             </div>
 
             <div class="carrusel-indicadores">
-                    <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver evento 1"></button>
-                    <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver evento 2"></button>
-                    <button type="button" class="carrusel-indicador" data-indice="2" aria-label="Ver evento 3"></button>
-                </div>
+                <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver evento 1"></button>
+                <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver evento 2"></button>
+                <button type="button" class="carrusel-indicador" data-indice="2" aria-label="Ver evento 3"></button>
+            </div>
         </section>
 
         <section id="sobre-nosotros" class="sobre-nosotros">
@@ -258,7 +262,9 @@
             <p> Nuestro nombre viene del <i lang="en">bloom</i>, ese instante en el que el café recién molido se abre al primer contacto con el agua. Pero también del concepto de florecer, abrirnos a experiencias, sabores y lecturas nuevas para crecer.</p>
 
             <div class="carrusel carrusel-sobre-nosotros" id="carrusel-sobre-nosotros" data-visibles="3">
-                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Imágenes anteriores">&#10094;</button>
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Libros anteriores">
+                    <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                </button>
                 
                 <div class="carrusel-contenedor" id="carrusel-contenedor-sobre-nosotros">
                     <div class="carrusel-track">
@@ -283,7 +289,9 @@
                     </div>
                 </div>
 
-                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Siguientes imágenes">&#10095;</button>
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Libros siguientes">
+                    <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                </button>
 
                 <div class="carrusel-indicadores">
                    <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver imágenes 1 a 3"></button>
@@ -301,35 +309,40 @@
                 </div>
 
                 <div class="contacto-datos">
-                    <p><i class="ti ti-brand-instagram" aria-hidden="true"></i> <a href="https://instagram.com/balandu" target="_blank" rel="noopener noreferrer">@balandu</a></p>
-                    <p><i class="ti ti-mail" aria-hidden="true"></i> <a href="mailto:info@balandu.com">info@balandu.com</a></p>
+                    <p><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">¡Comunícate con nosotros!</a></p>
+                    <p><i class="ti ti-brand-instagram" aria-hidden="true"></i> <a href="https://instagram.com/blooming" target="_blank" rel="noopener noreferrer">@blooming</a></p>
                     <p><i class="ti ti-phone" aria-hidden="true"></i> <a href="tel:+573001234567">+57 300 123 4567</a></p>
-                    <p><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></p>
-                    <p><i class="ti ti-map-pin" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia</p>
+                    <p><i class="ti ti-mail" aria-hidden="true"></i> <a href="mailto:info@blooming.com">info@blooming.com</a></p>
+                    
+                    <h3>¡Visítanos y vive la experiencia!</h3>
+                    <p><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 74 #30 12, Barranquilla, Colombia</p>
                     <p><i class="ti ti-clock" aria-hidden="true"></i> Lun-Vie: 8:00 AM - 8:00 PM<br>Sáb, Dom y Festivos: 8:00 AM a 9:00 PM</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Carrera+74+%2330+12+Barranquilla+Colombia" class="boton-como-llegar" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
                 </div>
 
                 <div class="formulario-contacto">
                     <h3>Envíanos un mensaje</h3>
-                    <p class="aviso">Al enviar se abrirá tu app de correo con el mensaje ya redactado.</p>
-
-                    <form action="mailto:info@balandu.com" method="post" enctype="text/plain">
+                    <form id="form-contacto" action="mailto:info@blooming.com" method="post" enctype="text/plain">
                         <div class="form-grupo">
                             <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required minlength="2">
+                            <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required minlength="2" aria-describedby="nombre-error">
+                            <p class="form-error" id="nombre-error"></p>
                         </div>
                         
                         <div class="form-grupo">
                             <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="Correo" placeholder="tucorreo@ejemplo.com" required>
+                            <input type="email" id="email" name="Correo" placeholder="tucorreo@ejemplo.com" required aria-describedby="email-error">
+                            <p class="form-error" id="email-error"></p>
                         </div>
 
                         <div class="form-grupo">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudarte." required minlength="10"></textarea>
+                            <label for="mensaje">Redacta el mensaje</label>
+                            <textarea id="mensaje" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudarte." required minlength="10" aria-describedby="mensaje-error"></textarea>
+                            <p class="form-error" id="mensaje-error"></p>
                         </div>
 
-                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                        <button type="submit" class="btn-enviar" id="boton-enviar">Enviar mensaje</button>
+                        <p class="form-estado" id="form-estado" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -337,34 +350,29 @@
     </main>
     <footer>
         <div class="footer-marca">
-            <h3></h3>
+            <img src="imagenes/logo-footer.svg" alt="Blooming, Café & Libros" class="footer-logo">
             <p>Donde el café y las buenas historias se encuentran.</p>
         </div>
 
         <div class="footer-redes">
-            <a href="https://instagram.com/balandu" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com/blooming" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i class="ti ti-brand-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
             </a>
-            <a href="mailto:info@balandu.com" aria-label="Email">
+            <a href="mailto:info@blooming.com" aria-label="Correo electrónico">
                 <i class="ti ti-mail" aria-hidden="true"></i>
             </a>
         </div>
 
         <p class="footer-direccion"><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
 
-        <p class="footer-copy">&copy; 2026 . Todos los derechos reservados.</p>
+        <p class="footer-copy">&copy; 2026 Blooming, Café & Libros. Todos los derechos reservados.</p>
     </footer>
 
-    <button type="button" class="carrito-boton-flotante" aria-label="Abrir carrito" aria-expanded="false" aria-controls="carrito-panel">
-        <i class="ti ti-shopping-cart" aria-hidden="true"></i>
-        <span class="carrito-contador">0</span>
-    </button>
-
     <div class="carrito-overlay" id="carrito-overlay"></div>
-
+        
     <aside class="carrito-panel" id="carrito-panel" aria-hidden="true">
         <div class="carrito-panel-header">
             <h2 class="carrito-titulo">Tu pedido</h2>
@@ -385,6 +393,6 @@
             <button type="button" class="carrito-checkout" id="carrito-checkout">Finalizar pedido</button>
         </div>
     </aside>
-
+    <script src="script.js"></script>
 </body>
 </html>

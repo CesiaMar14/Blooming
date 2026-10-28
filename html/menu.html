@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Blooming</title>
+    <meta name="description" content="Descubre nuestro menú completo de bebidas, comidas, postres y especiales de la casa.">
+
+    <meta property="og:title" content="Menú - Blooming">
+    <meta property="og:description" content="Donde el café y las buenas historias se encuentran. Descubre nuestro menú completo de bebidas, comidas, postres y especiales de la casa.">
+    <meta property="og:site_name" content="Blooming">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cesiamar14.github.io/Blooming/menu.html">
+    <meta property="og:image" content="https://cesiamar14.github.io/Blooming/imagenes/og-imagen.jpg">
+    <meta property="og:locale" content="es_CO">
+
+    <link rel="canonical" href="https://cesiamar14.github.io/Blooming/index.html">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+   <header>
+        <button type="button" class="menu-hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-desplegable">
+            <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>    
+
+        <a href="index.html" class="encabezado-marca">
+            <img src="imagenes/logo-header.svg" alt="Blooming" class="logo-header">
+        </a> 
+        
+        <form class="buscador" role="search">
+            <button type="submit" class="buscador-boton" aria-label="Buscar">
+                <i class="ti ti-search" aria-hidden="true"></i>
+            </button>
+            <label for="buscar" class="sr-only">Buscar en el sitio</label>
+            <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
+        </form>
+
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="menu.html" aria-current="page"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Menú</a></li>
+                <li><a href="libros.html"><i class="ti ti-books" aria-hidden="true"></i> Libros</a></li>
+                <li><a href="eventos.html"><i class="ti ti-calendar-event" aria-hidden="true"></i> Eventos</a></li>
+                <li><a href="index.html#contacto"><i class="ti ti-mail" aria-hidden="true"></i> Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="encabezado-iconos">
+             <button type="button" aria-label="Mi cuenta">
+                <i class="ti ti-user" aria-hidden="true"></i>
+            </button>
+
+            <button type="button" class="carrito-boton" aria-label="Abrir carrito" aria-expanded="false" aria-controls="carrito-panel">
+                <i class="ti ti-shopping-cart" aria-hidden="true"></i>
+                <span class="carrito-contador">0</span>
+            </button>
+        </div>
+        
+        <nav class="menu-desplegable" id="menu-desplegable" aria-label="Menú desplegable">
+            <button type="button" class="cerrar-menu" aria-label="Cerrar menú">
+                <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
+                <li><a href="menu.html" aria-current="page">Menú</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio-menu" class="menu-hero">
+            <div class="menu-hero-tarjeta">
+                <img src="imagenes/cafetera.png" alt="" class="menu-hero-icono menu-hero-icono-arriba">
+
+                <h1 class="hero-titulo">
+                    <span class="hero-el">El</span>
+                    <span class="hero-menu">Menú</span>
+                </h1>
+                <p class="menu-hero-lema">Encuentra tu próximo antojo.</p>
+                <p class="menu-hero-aviso">Disponible solo en tienda.</p>
+
+                <img src="imagenes/cafe-croissant.png" alt="" class="menu-hero-icono menu-hero-icono-abajo">
+            </div>
+        </section>
+
+        <div class="separador separador-sand" aria-hidden="true">
+            <div class="separador-track">
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-separar">|</span>
+                    <span>Menú</span><span class="separador-separar">|</span>
+                    <span>Blooming</span><span class="separador-separar">|</span>
+                    <span>Menú</span><span class="separador-separar">|</span>
+                </div>
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-separar">|</span>
+                    <span>Menú</span><span class="separador-separar">|</span>
+                    <span>Blooming</span><span class="separador-separar">|</span>
+                    <span>Menú</span><span class="separador-separar">|</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-marco">
+            <section id="combos" class="menu-combos">
+                <h2>Combos</h2>
+                <p class="menu-subtitulo">Duplas que ya probamos por ti, pensadas para estar juntas.</p>
+
+                <div class="carrusel carrusel-combos" id="carrusel-combos" data-visibles="3">
+                    <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Combos anteriores">
+                        <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="carrusel-contenedor" id="carrusel-contenedor-combos">
+                        <div class="carrusel-track">
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Estudiante</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Espresso + Galletas de avena y pasas (x3)</p>
+                                    <span class="menu-item-precio">$15.000</span>
+                                </div>
+                            </article>
+
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Tarde de café</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Cappuccino + Brownie de chocolate</p>
+                                    <span class="menu-item-precio">$17.000</span>
+                                </div>
+                            </article>
+
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Brunch ligero</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Wrap de pollo + Limonada de coco</p>
+                                    <span class="menu-item-precio">$22.000</span>
+                                </div>
+                            </article>
+
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Dulce firma</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Heathcliff + Emma</p>
+                                    <span class="menu-item-precio">$21.000</span>
+                                </div>
+                            </article>
+
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Café y croissant</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Americano + Croissant de chocolate</p>
+                                    <span class="menu-item-precio">$18.000</span>
+                                </div>
+                            </article>
+
+                            <article class="carrusel-item combo">
+                                <h3 class="combo-nombre">Infusión y pastel</h3>
+                                <div class="combo-fila">
+                                    <p class="combo-detalle">Té frío de frutos rojos + Muffin de arándanos</p>
+                                    <span class="menu-item-precio">$13.000</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Combos siguientes">
+                        <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="carrusel-indicadores">
+                        <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver combos 1 a 3"></button>
+                        <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver combos 4 a 6"></button>
+                    </div>
+                </div>
+            </section> 
+
+            <section id="bebidas-calientes" class="menu-categoria">
+                <h2>Bebidas calientes</h2>
+                <ul class="menu-lista">
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Espresso</span>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Americano</span>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Cappuccino</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$11.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Latte</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$12.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Mocha</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$13.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Café de origen colombiano</span>
+                            <p class="menu-item-descripcion">
+                                Cultivado bajo sombra por familias indígenas arhuacas,
+                                koguis, wiwas y kankuamas en las montañas de la Sierra
+                                Nevada de Santa Marta. Notas de chocolate, nuez y caramelo
+                                con un toque floral, acidez suave y cuerpo cremoso.
+                            </p>
+                        </div>
+                        <span class="menu-item-precio">$12.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Chocolate caliente</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$8.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Té negro</span>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Infusión de frutos rojos</span>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="bebidas-frias" class="menu-categoria">
+                <h2>Bebidas frías</h2>
+                <ul class="menu-lista">
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Café frío</span>
+                        </div>
+                        <span class="menu-item-precio">$10.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Smoothie de fresa y banano</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$10.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Matcha frío</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$13.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Té frío de frutos rojos</span>
+                        </div>
+                        <span class="menu-item-precio">$9.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Té frío de durazno</span>
+                        </div>
+                        <span class="menu-item-precio">$9.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Limonada natural</span>
+                        </div>
+                        <span class="menu-item-precio">$8.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Limonada de coco</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                        </div>
+                        <span class="menu-item-precio">$12.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Agua de panela con limón</span>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Agua mineral</span>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="comida" class="menu-categoria">
+                <h2>Comidas</h2>
+                <ul class="menu-lista">
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Ensalada César</span>
+                            <p class="menu-item-etiquetas">Contiene lácteos y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$20.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Wrap de pollo</span>
+                            <p class="menu-item-etiquetas">Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$13.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Sándwich de pavo</span>
+                            <p class="menu-item-etiquetas">Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$11.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Panini de jamón y queso</span>
+                            <p class="menu-item-etiquetas">Contiene lácteos y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$10.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Pan de yuca</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos y huevo, Sin harina de trigo</p>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Croissant de jamón y queso</span>
+                            <p class="menu-item-etiquetas">Contiene lácteos y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$13.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Croissant de chocolate</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$11.000</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="postres" class="menu-categoria">
+                <h2>Postres</h2>
+
+                <ul class="menu-lista">
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Tarta de manzana</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$8.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Brownie de chocolate</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo, gluten y frutos secos</p>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Galletas de avena y pasas</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$4.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Galletas de chispas de chocolate</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Muffin de arándanos</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$5.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Torta de zanahoria</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo, gluten y frutos secos</p>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Torta de chocolate</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$7.000</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <div class="menu-item-info">
+                            <span class="menu-item-nombre">Roll de canela</span>
+                            <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo y gluten</p>
+                        </div>
+                        <span class="menu-item-precio">$6.000</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="especiales" class="menu-categoria">
+                <h2>Especiales</h2>
+                <p class="menu-subtitulo">Especiales con historia, inspirados en la literatura</p>
+
+                <div class="carrusel carrusel-especiales" id="carrusel-especiales" data-visibles="3">
+                    <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Especiales anteriores">
+                        <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="carrusel-contenedor" id="carrusel-contenedor-especiales">
+                        <div class="carrusel-track">
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">Cova</h3>
+                                <p class="especial-cita">“¡Los devoró la selva!”</p>
+                                <p class="especial-descripcion">Arepa de maíz tostada con carne desmechada, aguacate y ají casero.</p>
+                                <span class="menu-item-precio">$15.000</span>
+                                <p class="menu-item-etiquetas">Sin harina de trigo</p>
+                            </article>
+
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">El Quijote</h3>
+                                <p class="especial-cita">“En un lugar de la Mancha, de cuyo nombre no quiero acordarme...”</p>
+                                <p class="especial-descripcion">Tostadas de pan artesanal con queso costeño derretido, jamón serrano y miel.</p>
+                                <span class="menu-item-precio">$16.000</span>
+                                <p class="menu-item-etiquetas">Contiene lácteos y gluten</p>
+                            </article>
+
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">Heathcliff</h3>
+                                <p class="especial-cita">“¡Yo soy Heathcliff!”</p>
+                                <p class="especial-descripcion">Limonada oscura de jamaica con romero y pimienta rosada.</p>
+                                <span class="menu-item-precio">$9.000</span>
+                            </article>
+
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">Lear</h3>
+                                <p class="especial-cita">“Nada saldrá de la nada.”</p>
+                                <p class="especial-descripcion">Té negro ahumado con una rodaja de naranja quemada al soplete.</p>
+                                <span class="menu-item-precio">$8.000</span>
+                            </article>
+
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">Emma</h3>
+                                <p class="especial-cita">“Emma Woodhouse, hermosa, inteligente y rica...”</p>
+                                <p class="especial-descripcion">Cheesecake de frutos rojos con crocante de almendras.</p>
+                                <span class="menu-item-precio">$16.000</span>
+                                <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos, huevo, gluten y frutos secos</p>
+                            </article>
+
+                            <article class="carrusel-item especial">
+                                <h3 class="especial-nombre">Dorian</h3>
+                                <p class="especial-cita">“Hay algo peor que se hable de uno: que no se hable en absoluto.”</p>
+                                <p class="especial-descripcion">Chocolate oscuro con centro de mermelada de mora.</p>
+                                <span class="menu-item-precio">$11.000</span>
+                                <p class="menu-item-etiquetas">Vegetariano, Contiene lácteos</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Especiales siguientes">
+                        <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="carrusel-indicadores">
+                        <button type="button" class="carrusel-indicador activo" data-indice="0" aria-label="Ver especiales 1 a 3"></button>
+                        <button type="button" class="carrusel-indicador" data-indice="1" aria-label="Ver especiales 4 a 6"></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <img src="imagenes/logo-footer.svg" alt="Blooming, Café & Libros" class="footer-logo">
+            <p>Donde el café y las buenas historias se encuentran.</p>
+        </div>
+
+        <div class="footer-redes">
+            <a href="https://instagram.com/blooming" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:info@blooming.com" aria-label="Correo electrónico">
+                <i class="ti ti-mail" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <p class="footer-direccion"><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
+
+        <p class="footer-copy">&copy; 2026 Blooming, Café & Libros. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="carrito-overlay" id="carrito-overlay"></div>
+        
+    <aside class="carrito-panel" id="carrito-panel" aria-hidden="true">
+        <div class="carrito-panel-header">
+            <h2 class="carrito-titulo">Tu pedido</h2>
+            <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito">
+                <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="carrito-items" id="carrito-items">
+            <p class="carrito-vacio">Tu carrito está vacío.</p>
+        </div>
+
+        <div class="carrito-panel-footer">
+            <div class="carrito-total">
+                <span>Total</span>
+                <span class="carrito-total-monto">$0</span>
+            </div>
+            <button type="button" class="carrito-checkout" id="carrito-checkout">Finalizar pedido</button>
+        </div>
+    </aside>
+</body>
+</html>
