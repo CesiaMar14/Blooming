@@ -1,0 +1,1206 @@
+/* #region VARIABLES */
+
+:root {
+  /* Paleta */
+  --beige: #F4F4DA;
+  --sand: #BFB069;
+  --pale-slate: #C8D1D9;
+  --espresso: #462014;
+  --olive: #8B8B30;
+  --bordeaux: #5A1D22;
+
+  /* Tipografías */
+  --fuente-logo: "Ballet", cursive;                            
+  --fuente-titulos: "EB Garamond", Georgia, serif;             
+  --fuente-texto: "Jost", sans-serif;                          
+  --fuente-maquina: "Special Elite", sans-serif;       
+
+  /* Sombras cortas y sólidas */
+  --sombra-suave: 0 6px 20px rgba(70, 32, 20, 0.7);
+  --sombra-suave-chica: 0 3px 10px rgba(70, 32, 20, 0.6);
+  --sombra-tarjeta: 0 10px 28px rgba(70, 32, 20, 0.6);
+  --sombra-libro: 0 6px 14px rgba(70, 32, 20, 0.65);
+
+  /* Bordes y radios */
+  --borde: 2px solid var(--espresso);
+  --radio-chico: 6px;
+  --radio-medio: 14px;
+  --radio-pildora: 999px;
+
+  /* Espaciado */
+  --espacio-1: 0.5rem;
+  --espacio-2: 1rem;
+  --espacio-3: 1.5rem;
+  --espacio-4: 2.5rem;
+  --espacio-5: 4rem;
+
+  /* Ancho máximo del contenido */
+  --ancho-max: 1200px;
+
+  /* Altura del header */
+  --altura-header: 5rem;
+
+  /* Tamaño de los iconos de enlaces, cuenta y carrito (la hamburguesa y la lupa tienen el suyo) */
+  --icono-nav: 1.25rem;
+}
+
+/* #endregion */
+
+/* #region RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--altura-header);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* #endregion */
+
+/* #region BASE */
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--espresso);
+  background-color: var(--beige);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); }
+
+/* Foco visible para teclado */
+:focus-visible {
+  outline: 3px solid var(--bordeaux);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--sand);
+  color: var(--espresso);
+}
+
+/* #endregion */
+
+/* #region UTILIDADES */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contenedor {
+  width: min(100% - 2rem, var(--ancho-max));
+  margin-inline: auto;
+}
+
+/* Etiqueta pequeña de sección (máquina de escribir) */
+.etiqueta {
+  font-family: var(--fuente-maquina);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* #endregion */
+
+/* #region HEADER */
+
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  min-height: var(--altura-header);
+  padding-inline: var(--espacio-2);
+  background-color: var(--pale-slate);
+  color: var(--espresso);
+}
+
+/* Botones de icono: hamburguesa, cuenta y carrito */
+.menu-hamburguesa,
+.encabezado-iconos button {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radio-pildora);
+  color: var(--espresso);
+}
+
+.menu-hamburguesa i {
+  font-size: 1.5rem;
+}
+
+.buscador-boton i {
+  font-size: 1.1rem;
+}
+
+/* Logo */
+.encabezado-marca {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-header {
+  height: 4.5rem;
+  width: auto;
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 22rem;
+  margin-inline: auto;
+  padding: 0.25rem 0.75rem;
+  border: 1.5px solid var(--espresso);
+  border-radius: var(--radio-pildora);
+}
+
+.buscador-boton {
+  display: grid;
+  place-items: center;
+  color: var(--espresso);
+}
+
+.buscador input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--espresso);
+}
+
+.buscador input::placeholder {
+  color: var(--espresso);
+  opacity: 0.7;
+}
+
+.buscador:focus-within {
+  background-color: var(--beige);
+  outline: 3px solid var(--bordeaux);
+  outline-offset: 3px;
+}
+
+/* Enlaces principales (solo en pantallas grandes) */
+.nav-principal {
+  display: none;
+}
+
+.nav-principal ul {
+  display: flex;
+  gap: var(--espacio-4);
+}
+
+.nav-principal a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-block: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--espresso);
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.nav-principal a:hover {
+  border-bottom-color: var(--espresso);
+}
+
+/* Enlaces, cuenta y carrito: todos iguales */
+.nav-principal i,
+.encabezado-iconos i {
+  font-size: var(--icono-nav);
+}
+
+/* Cuenta y carrito */
+.encabezado-iconos {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.carrito-boton {
+  position: relative;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding-inline: 0.25rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--bordeaux);
+  color: var(--beige);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Menú desplegable: oculto hasta que lo active el JS */
+.menu-desplegable {
+  display: none;
+}
+
+/* Celular: header más bajito */
+@media (max-width: 599px) {
+  :root {
+    --altura-header: 3.75rem;
+  }
+
+  .logo-header {
+    height: 3.25rem;
+  }
+}
+
+/* Computador: aparecen los enlaces y hay más aire */
+@media (min-width: 900px) {
+  body > header {
+    gap: var(--espacio-3);
+    padding-inline: var(--espacio-3);
+  }
+
+  .nav-principal {
+    display: block;
+    margin-inline: auto;
+  }
+
+  .buscador {
+    position: relative;
+    left: 2rem;
+  }
+}
+
+/* #endregion */
+
+/* #region BOTONES */
+
+.boton {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--bordeaux);
+  color: var(--beige);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: var(--sombra-suave-chica);
+  transition: transform 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.boton:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(70, 32, 20, 0.6);
+}
+
+.boton:active {
+  background-color: var(--espresso);
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* #endregion */
+
+/* #region HERO */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--altura-header));
+  background: repeating-linear-gradient(
+    90deg,
+    var(--olive) 0 1.75rem,
+    var(--beige) 1.75rem 3.5rem
+  );
+}
+
+/* Tarjeta con el marco ornamental */
+.hero-contenido {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: -1.4rem;
+  width: min(94%, clamp(34rem, calc((100vh - var(--altura-header) - 12rem) * 1.78), 48rem));
+  margin: auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.hero-contenido::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../imagenes/frame-hero.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 6px 6px rgba(70, 32, 20, 0.7));
+}
+
+.hero-contenido h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.hero-saludo {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.logo-hero {
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+  margin-block: -1.5rem;
+}
+
+.hero-contenido .boton {
+  margin-top: 0.75rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .hero-contenido {
+    aspect-ratio: 1080 / 607;
+    padding: 1.5rem 5rem;
+  }
+}
+
+/* Tira de portadas en movimiento */
+.hero-portadas {
+  overflow: hidden;
+  padding-top: var(--espacio-2);
+  padding-bottom: 3rem;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    var(--beige) 50%
+  );
+}
+
+.hero-portadas-track {
+  display: flex;
+  width: max-content;
+  animation: portadas-desplazar 80s linear infinite;
+}
+
+.hero-portadas img {
+  flex-shrink: 0;
+  height: clamp(10.5rem, 22vw, 15rem);
+  width: auto;
+  aspect-ratio: 2 / 3;
+  margin-right: var(--espacio-2);
+  border-radius: 1.25rem;
+  object-fit: cover;
+}
+
+/* Se mueve justo la mitad: como las portadas están repetidas, el salto no se nota */
+@keyframes portadas-desplazar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* #endregion */
+
+/* #region LIBROS DEL MES */
+
+.libros-del-mes {
+  padding: 2.5rem var(--espacio-2) var(--espacio-5);
+  text-align: center;
+}
+
+.libros-del-mes h2 {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Las dos frases, una bajo la otra */
+.libros-del-mes > p {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.libros-del-mes > h2 + p {
+  margin-top: var(--espacio-1);
+}
+
+.libros-del-mes > p:last-of-type {
+  margin-bottom: var(--espacio-4);
+}
+
+/* --- Base compartida por todos los carruseles --- */
+.carrusel {
+  --visibles: 1;
+  position: relative;
+}
+
+.carrusel-contenedor {
+  overflow: hidden;
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carrusel-item {
+  flex: 0 0 calc(100% / var(--visibles));
+}
+
+.carrusel-flecha {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.75rem;
+  color: var(--espresso);
+}
+
+.carrusel-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: var(--espacio-2);
+}
+
+.carrusel-indicador {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1.5px solid var(--espresso);
+  border-radius: 50%;
+  background-color: var(--pale-slate);
+}
+
+.carrusel-indicador.activo {
+  background-color: var(--espresso);
+}
+
+/* --- Solo el carrusel de libros --- */
+.carrusel-libros {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: var(--espacio-3) 4rem 3rem;
+  border-radius: 2rem;
+  background-color: var(--beige);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+@media (min-width: 600px) {
+  .carrusel-libros {
+    --visibles: 2;
+    padding-inline: 4.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .carrusel-libros {
+    --visibles: 3;
+  }
+}
+
+.carrusel-libros .carrusel-item {
+  padding: 0.75rem 1rem 1.25rem;
+}
+
+.carrusel-libros .carrusel-item img {
+  width: min(100%, 11rem);
+  aspect-ratio: 2 / 3;
+  margin: 0 auto var(--espacio-2);
+  border-radius: 0.75rem;
+  object-fit: cover;
+  box-shadow: var(--sombra-libro);
+}
+
+.carrusel-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.carrusel-autor {
+  margin-bottom: var(--espacio-1);
+  font-size: 0.9rem;
+}
+
+/* "Ver más" */
+.carrusel-enlace {
+  display: inline-block;
+  padding: 0.35rem 1.6rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--pale-slate);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--sombra-suave-chica);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.carrusel-enlace:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(70, 32, 20, 0.6);
+}
+
+/* Flechas y puntos del carrusel de libros, dentro de la tarjeta */
+.carrusel-libros .carrusel-flecha {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+}
+
+.carrusel-libros .carrusel-flecha-izq { left: 2rem; }
+.carrusel-libros .carrusel-flecha-der { right: 2rem; }
+
+.carrusel-libros .carrusel-indicadores {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+}
+
+/* #endregion */
+
+/* #region CINTILLO (separador) */
+
+.separador {
+  overflow: hidden;
+  padding-block: 0.6rem;
+  background-color: var(--olive);
+  color: var(--beige);
+}
+
+.separador-track {
+  display: flex;
+  width: max-content;
+  animation: separador-desplazar 25s linear infinite;
+}
+
+.separador-grupo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.separador-grupo span {
+  padding-inline: 1rem;
+  font-family: var(--fuente-logo);
+  font-size: 2.5rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* La barra: recta, no cursiva */
+.separador-barra {
+  font-family: var(--fuente-texto) !important;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem !important;
+}
+
+/* Hay 4 grupos iguales: se mueve justo uno (25%) y el salto no se nota */
+@keyframes separador-desplazar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
+}
+
+/* #endregion */
+
+/* #region MENÚ DEL INICIO */
+
+.menu-inicio,
+.eventos-inicio {
+  padding: var(--espacio-5) max(1rem, calc((100% - var(--ancho-max)) / 2));
+}
+
+.menu-inicio h2,
+.eventos-inicio h2 {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.menu-inicio {
+  display: grid;
+  gap: var(--espacio-4);
+  align-items: center;
+}
+
+.texto-menu-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.texto-menu-inicio p {
+  max-width: 30rem;
+}
+
+/* Botones de Menú y Eventos: mismo estilo que "Ver más" */
+.boton-menu,
+.boton-eventos {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.75rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--pale-slate);
+  color: var(--espresso);
+  font-weight: 500;
+  text-align: center;
+  box-shadow: var(--sombra-suave-chica);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.boton-menu:hover,
+.boton-eventos:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(70, 32, 20, 0.6);
+}
+
+.imagenes-menu-inicio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-2);
+}
+
+.imagenes-menu-inicio img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  box-shadow: var(--sombra-libro);
+}
+
+@media (min-width: 900px) {
+  .menu-inicio {
+    grid-template-columns: 1fr 1.25fr;
+    gap: var(--espacio-5);
+  }
+}
+
+/* #endregion */
+
+/* #region DIVISOR DE CUADROS */
+
+.divisor-cuadros {
+  --cuadro: 1.25rem;
+  height: calc(var(--cuadro) * 2);
+  background-color: var(--olive);
+  background-image: conic-gradient(
+    var(--sand) 25%,
+    transparent 0 50%,
+    var(--sand) 0 75%,
+    transparent 0
+  );
+  background-size: calc(var(--cuadro) * 2) calc(var(--cuadro) * 2);
+}
+
+/* #endregion */
+
+/* #region EVENTOS DEL INICIO */
+
+.eventos-inicio {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "texto"
+    "carrusel"
+    "puntos";
+  gap: var(--espacio-3);
+}
+
+.texto-eventos-inicio {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.texto-eventos-inicio p {
+  max-width: 34rem;
+}
+
+.texto-eventos-inicio .boton-eventos {
+  margin-top: var(--espacio-1);
+}
+
+.carrusel-eventos {
+  grid-area: carrusel;
+  width: 100%;
+  max-width: 32rem;
+  margin-inline: auto;
+  padding-inline: 2.75rem;
+}
+
+.carrusel-eventos .carrusel-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carrusel-eventos .carrusel-flecha-izq { left: 0; }
+.carrusel-eventos .carrusel-flecha-der { right: 0; }
+
+.carrusel-eventos .carrusel-item {
+  padding: 0.75rem 1rem 1.25rem;
+}
+
+.carrusel-eventos .carrusel-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  box-shadow: var(--sombra-libro);
+}
+
+.eventos-inicio > .carrusel-indicadores {
+  grid-area: puntos;
+  margin-top: 0;
+}
+
+@media (min-width: 900px) {
+  .eventos-inicio {
+    grid-template-columns: minmax(0, 32rem) 1fr;
+    grid-template-areas:
+      "carrusel texto"
+      "puntos   texto";
+    gap: 0 var(--espacio-5);
+    align-items: center;
+  }
+
+  .carrusel-eventos {
+    margin-inline: 0;
+  }
+
+  /* Texto alineado a la derecha, como en tu diseño */
+  .texto-eventos-inicio {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+/* #endregion */
+
+/* #region SOBRE NOSOTROS */
+
+/* Fondo de rayas, como el del hero */
+.sobre-nosotros {
+  padding: var(--espacio-5) var(--espacio-2);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--olive) 0 1.75rem,
+    var(--beige) 1.75rem 3.5rem
+  );
+}
+
+/* Tarjeta: una sola imagen con la textura de papel y el marco */
+.sobre-tarjeta {
+  position: relative;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 3.5rem 1.75rem 2.5rem;
+  background: var(--beige) url("../imagenes/carta-papel.webp") center / 100% 100% no-repeat;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.sobre-tarjeta h2 {
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: var(--espacio-1);
+}
+
+/* Texto en máquina de escribir */
+.sobre-tarjeta > p {
+  font-family: var(--fuente-maquina);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-indent: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* "Blooming" en escritura al inicio del párrafo */
+.nombre-en-texto {
+  font-family: var(--fuente-logo);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+/* Carrusel de imágenes */
+.carrusel-sobre-nosotros {
+  --visibles: 1;
+  margin-top: var(--espacio-3);
+  padding-inline: 2.75rem;
+}
+
+.carrusel-sobre-nosotros .carrusel-item {
+  padding: 0.5rem 0.6rem 1rem;
+}
+
+.carrusel-sobre-nosotros .carrusel-item img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: var(--sombra-libro);
+}
+
+.carrusel-sobre-nosotros .carrusel-flecha {
+  position: absolute;
+  top: calc(50% - 0.75rem);
+  transform: translateY(-50%);
+}
+
+.carrusel-sobre-nosotros .carrusel-flecha-izq { left: 0; }
+.carrusel-sobre-nosotros .carrusel-flecha-der { right: 0; }
+
+@media (min-width: 700px) {
+  /* Misma proporción que la imagen: el marco no se deforma */
+  .sobre-tarjeta {
+    aspect-ratio: 1500 / 844;
+    padding: 6% 9%;
+  }
+
+  .carrusel-sobre-nosotros {
+    --visibles: 3;
+  }
+}
+
+/* #endregion */
+
+/* #region CONTACTO */
+
+.contacto {
+  padding: var(--espacio-5) max(1rem, calc((100% - var(--ancho-max)) / 2));
+}
+
+.contacto-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "datos"
+    "formulario";
+  gap: var(--espacio-3);
+}
+
+.contacto-intro      { grid-area: intro; }
+.contacto-datos      { grid-area: datos; }
+.formulario-contacto { grid-area: formulario; }
+
+.contacto-intro h2 {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.contacto-intro p {
+  font-size: 1.15rem;
+}
+
+/* Datos de contacto */
+.contacto-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* El icono va fuera del texto: así el salto de línea de los horarios no lo rompe */
+.contacto-datos p {
+  position: relative;
+  padding-left: 1.9rem;
+}
+
+.contacto-datos p > i {
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 1.25rem;
+  color: var(--espresso);
+}
+
+.contacto-datos h3 {
+  margin-top: var(--espacio-2);
+  font-size: 1.35rem;
+}
+
+.boton-como-llegar {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.75rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--pale-slate);
+  color: var(--espresso);
+  font-weight: 500;
+  box-shadow: var(--sombra-suave-chica);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.boton-como-llegar:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(70, 32, 20, 0.6);
+}
+
+/* Tarjeta del formulario */
+.formulario-contacto {
+  padding: 3rem 2rem;
+  background: var(--beige) url("../imagenes/tarjeta-papel.webp") center / 100% 100% no-repeat;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.formulario-contacto h3 {
+  margin-bottom: var(--espacio-2);
+  font-size: 1.5rem;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-grupo label {
+  font-family: var(--fuente-maquina);
+  font-size: 0.85rem;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 4px rgba(70, 32, 20, 0.3);
+  font-size: 1rem;
+}
+
+.form-grupo textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+  color: var(--espresso);
+  opacity: 0.55;
+}
+
+/* Mensajes de error y de estado: ocultos mientras estén vacíos */
+.form-error,
+.form-estado {
+  color: var(--bordeaux);
+  font-size: 0.85rem;
+}
+
+.form-error:empty,
+.form-estado:empty {
+  display: none;
+}
+
+.btn-enviar {
+  align-self: flex-end;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--bordeaux);
+  color: var(--beige);
+  font-weight: 500;
+  box-shadow: var(--sombra-suave-chica);
+  transition: transform 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.btn-enviar:hover {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(70, 32, 20, 0.6);
+}
+
+.btn-enviar:active {
+  background-color: var(--espresso);
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+@media (min-width: 900px) {
+  .contacto-wrapper {
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "intro formulario"
+      "datos formulario";
+    column-gap: var(--espacio-5);
+    row-gap: var(--espacio-3);
+    align-items: start;
+  }
+
+  /* Línea vertical olive: de los datos hasta el final de la tarjeta */
+  .contacto-datos {
+    align-self: stretch;
+    padding-right: var(--espacio-4);
+    border-right: 2px solid var(--olive);
+  }
+
+  .formulario-contacto {
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* #endregion */
+
+/* #region FOOTER */
+
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) max(1rem, calc((100% - var(--ancho-max)) / 2)) var(--espacio-3);
+  background-color: var(--pale-slate);
+}
+
+.footer-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-1);
+}
+
+.footer-logo {
+  height: 4.5rem;
+  width: auto;
+}
+
+.footer-marca p {
+  font-family: var(--fuente-maquina);
+  font-size: 0.95rem;
+}
+
+.footer-redes {
+  display: flex;
+  gap: var(--espacio-2);
+  font-size: 1.6rem;
+}
+
+.footer-redes a {
+  display: grid;
+  place-items: center;
+  color: var(--espresso);
+}
+
+.footer-direccion {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Línea de derechos, a todo lo ancho */
+.footer-copy {
+  flex-basis: 100%;
+  padding-top: var(--espacio-2);
+  border-top: 1px solid rgba(70, 32, 20, 0.25);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* #endregion */
+
+/* #region CARRITO */
+
+.carrito-overlay,
+.carrito-panel {
+  display: none;
+}
+
+/* #endregion */

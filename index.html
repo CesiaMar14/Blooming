@@ -41,7 +41,7 @@
             <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
         </form>
 
-        <nav aria-label="Navegación principal">
+        <nav class="nav-principal" aria-label="Navegación principal">
             <ul>
                 <li><a href="menu.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Menú</a></li>
                 <li><a href="libros.html"><i class="ti ti-books" aria-hidden="true"></i> Libros</a></li>
@@ -128,7 +128,8 @@
        
         <section id="libros-del-mes" class="libros-del-mes">
             <h2>Libros del mes</h2>
-            <p>Libros que no hemos podido dejar de recomendar este mes. Explora y encuentra tu próxima lectura.</p>
+            <p>Libros que no hemos podido dejar de recomendar este mes.</p>
+            <p>Explora y encuentra tu próxima lectura.</p>
             
             <div class="carrusel carrusel-libros" id="carrusel-libros" data-visibles="3">
                 <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Libros anteriores">
@@ -206,6 +207,18 @@
                     <span>Blooming</span><span class="separador-barra">|</span>
                     <span>Eventos</span><span class="separador-barra">|</span>
                 </div>
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Menú</span><span class="separador-barra">|</span>
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Eventos</span><span class="separador-barra">|</span>
+                </div>
+                <div class="separador-grupo">
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Menú</span><span class="separador-barra">|</span>
+                    <span>Blooming</span><span class="separador-barra">|</span>
+                    <span>Eventos</span><span class="separador-barra">|</span>
+                </div>
             </div>
         </div>
 
@@ -233,6 +246,10 @@
             </div>
 
             <div class="carrusel carrusel-eventos" data-visibles="1">
+                <button type="button" class="carrusel-flecha carrusel-flecha-izq" aria-label="Evento anterior">
+                    <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                </button>
+
                 <div class="carrusel-contenedor" id="carrusel-contenedor-eventos">
                     <div class="carrusel-track">
                         <div class="carrusel-item">
@@ -246,6 +263,10 @@
                         </div>
                     </div>
                 </div>
+
+                <button type="button" class="carrusel-flecha carrusel-flecha-der" aria-label="Evento siguiente">
+                    <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
 
             <div class="carrusel-indicadores">
@@ -256,6 +277,7 @@
         </section>
 
         <section id="sobre-nosotros" class="sobre-nosotros">
+        <div class="sobre-tarjeta">
             <h2>Sobre nosotros</h2>
             <p><span class="nombre-en-texto">Blooming</span> es más que un café o una librería; es un espacio donde la literatura, la cultura y la comunidad se unen. Es un lugar pensado para detenerse, conversar, descubrir un buen libro y disfrutar de un buen café.</p>
             <p>Está abierto a quien busque una pausa distinta en su día: desde quien llega por una buena taza de café, pasando por quien busca un rincón tranquilo para leer, hasta quien desea participar en nuestros eventos.</p>
@@ -315,7 +337,7 @@
                     <p><i class="ti ti-mail" aria-hidden="true"></i> <a href="mailto:info@blooming.com">info@blooming.com</a></p>
                     
                     <h3>¡Visítanos y vive la experiencia!</h3>
-                    <p><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 74 #30 12, Barranquilla, Colombia</p>
+                    <p><i class="ti ti-map-pin" aria-hidden="true"></i> Carrera 74 #30 12, Barranquilla, Colombia</p>
                     <p><i class="ti ti-clock" aria-hidden="true"></i> Lun-Vie: 8:00 AM - 8:00 PM<br>Sáb, Dom y Festivos: 8:00 AM a 9:00 PM</p>
                     <a href="https://www.google.com/maps/search/?api=1&query=Carrera+74+%2330+12+Barranquilla+Colombia" class="boton-como-llegar" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
                 </div>
@@ -366,7 +388,7 @@
             </a>
         </div>
 
-        <p class="footer-direccion"><i class="ti ti-map-pin-2" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
+        <p class="footer-direccion"><i class="ti ti-map-pin" aria-hidden="true"></i> Carrera 123, Barranquilla, Colombia.</p>
 
         <p class="footer-copy">&copy; 2026 Blooming, Café & Libros. Todos los derechos reservados.</p>
     </footer>
