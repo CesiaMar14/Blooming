@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libros - Blooming</title>
+    <title>Libros del mes - Blooming</title>
     <meta name="description" content="Encuentra tu próxima lectura y sumérgete en historias cautivadoras.">
 
-    <meta property="og:title" content="Libros - Blooming">
+    <meta property="og:title" content="Libros del mes - Blooming">
     <meta property="og:description" content="Donde el café y las buenas historias se encuentran. Encuentra tu próxima lectura y sumérgete en historias cautivadoras.">
     <meta property="og:site_name" content="Blooming">
     <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://cesiamar14.github.io/Blooming/imagenes/og-imagen.jpg">
     <meta property="og:locale" content="es_CO">
 
-    <link rel="canonical" href="https://cesiamar14.github.io/Blooming/index.html">
+    <link rel="canonical" href="https://cesiamar14.github.io/Blooming/libros.html">
     <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
         <nav class="nav-principal" aria-label="Navegación principal">
             <ul>
                 <li><a href="menu.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i> Menú</a></li>
-                <li><a href="libros.html" aria-current="page"><i class="ti ti-books" aria-hidden="true"></i> Libros</a></li>
+                <li><a href="libros.html" aria-current="page"><i class="ti ti-books" aria-hidden="true"></i> Libros del mes</a></li>
                 <li><a href="eventos.html"><i class="ti ti-calendar-event" aria-hidden="true"></i> Eventos</a></li>
                 <li><a href="index.html#contacto"><i class="ti ti-mail" aria-hidden="true"></i> Contacto</a></li>
             </ul>
@@ -67,7 +67,7 @@
             </button>
             <ul>
                 <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="libros.html" aria-current="page">Libros</a></li>
+                <li><a href="libros.html" aria-current="page">Libros del mes</a></li>
                 <li><a href="menu.html">Menú</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
@@ -75,7 +75,120 @@
             </ul>
         </nav>
    </header> 
-   <main></main>
+   <main>
+        <section class="libros-pagina" aria-labelledby="libros-titulo">
+            <header class="libros-intro">
+                <h1 id="libros-titulo">Libros del mes</h1>
+                <p class="libros-frase">Seis libros que no hemos podido dejar de recomendar este mes. Elige tu próxima lectura y, si quieres, llévatela con su cajita literaria.</p>
+                <p class="libros-aviso">Si estás buscando nuestra selección literaria completa, solo está disponible en nuestra tienda. ¡Visítanos!</p>
+            </header>
+
+            <ul class="libros-lista">
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/en-diciembre-llegaban-las-brisas.jpg" alt="Portada de En diciembre llegaban las brisas">
+                    <h2 class="libro-titulo">En diciembre llegaban las brisas</h2>
+                    <p class="libro-autor">Marvel Moreno</p>
+                    <button type="button" class="libro-ver-mas" data-libro="brisas" aria-haspopup="dialog" aria-label="Ver más sobre En diciembre llegaban las brisas">Ver más</button>
+                </li>
+
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/amanecer-en-la-cosecha.jpg" alt="Portada de Amanecer en la cosecha">
+                    <h2 class="libro-titulo">Amanecer en la cosecha</h2>
+                    <p class="libro-autor">Suzanne Collins</p>
+                    <button type="button" class="libro-ver-mas" data-libro="cosecha" aria-haspopup="dialog" aria-label="Ver más sobre Amanecer en la cosecha">Ver más</button>
+                </li>
+
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/el-cuento-de-la-criada.jpg" alt="Portada de El cuento de la criada">
+                    <h2 class="libro-titulo">El cuento de la criada</h2>
+                    <p class="libro-autor">Margaret Atwood</p>
+                    <button type="button" class="libro-ver-mas" data-libro="criada" aria-haspopup="dialog" aria-label="Ver más sobre El cuento de la criada">Ver más</button>
+                </li>
+
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/sentido-y-sensibilidad.jpg" alt="Portada de Sentido y sensibilidad">
+                    <h2 class="libro-titulo">Sentido y sensibilidad</h2>
+                    <p class="libro-autor">Jane Austen</p>
+                    <button type="button" class="libro-ver-mas" data-libro="sentido" aria-haspopup="dialog" aria-label="Ver más sobre Sentido y sensibilidad">Ver más</button>
+                </li>
+
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/la-vegetariana.jpg" alt="Portada de La vegetariana">
+                    <h2 class="libro-titulo">La vegetariana</h2>
+                    <p class="libro-autor">Han Kang</p>
+                    <button type="button" class="libro-ver-mas" data-libro="vegetariana" aria-haspopup="dialog" aria-label="Ver más sobre La vegetariana">Ver más</button>
+                </li>
+
+                <li class="libro-tarjeta">
+                    <img class="libro-portada" src="imagenes/yesteryear.jpg" alt="Portada de Yesteryear">
+                    <h2 class="libro-titulo">Yesteryear</h2>
+                    <p class="libro-autor">Caro Claire Burke</p>
+                    <button type="button" class="libro-ver-mas" data-libro="yesteryear" aria-haspopup="dialog" aria-label="Ver más sobre Yesteryear">Ver más</button>
+                </li>
+            </ul>
+        </section>
+   </main>
+
+   <dialog class="panel-libro" id="panel-libro" aria-labelledby="panel-libro-titulo">
+    <div class="panel-contenido">
+
+      <button type="button" class="panel-cerrar" aria-label="Cerrar">
+        <i class="ti ti-x" aria-hidden="true"></i>
+      </button>
+
+      <div class="panel-visual">
+        <div class="panel-diapositiva panel-diapositiva-libro">
+          <img class="panel-portada" alt="">
+          <p class="panel-editorial"></p>
+        </div>
+
+        <div class="panel-diapositiva panel-diapositiva-caja" hidden>
+          <img class="panel-caja-foto" src="imagenes/cajita-literaria.jpg" alt="Cajita literaria de Blooming, cerrada con cinta y etiqueta">
+          <div class="panel-caja-info">
+            <h3 class="panel-caja-nombre"></h3>
+            <p class="panel-caja-concepto"></p>
+            <ul class="panel-caja-lista">
+              <li>Postal ilustrada y marcapáginas</li>
+              <li>Una vela con aroma pensado para la historia</li>
+              <li>Carta de Blooming y playlist</li>
+              <li>Bono y vale acumulable para el café</li>
+              <li>Una sorpresa de la historia</li>
+            </ul>
+            <p class="panel-caja-aviso">El bono se canjea en nuestro café, en Barranquilla.</p>
+          </div>
+        </div>
+
+        <div class="panel-puntos">
+          <button type="button" class="panel-punto" data-vista="libro" aria-label="Ver el libro" aria-pressed="true"></button>
+          <button type="button" class="panel-punto" data-vista="caja" aria-label="Ver la cajita literaria" aria-pressed="false"></button>
+        </div>
+      </div>
+
+      <div class="panel-detalle">
+        <img class="panel-sello" src="imagenes/sello-club-lectura.png" alt="Sello del club de lectura" hidden>
+        <h2 class="panel-titulo" id="panel-libro-titulo"></h2>
+        <p class="panel-autor"></p>
+
+        <div class="panel-sinopsis">
+          <h3 class="panel-sinopsis-titulo" id="panel-sinopsis-titulo">Sinopsis</h3>
+          <div class="panel-sinopsis-texto" tabindex="0" role="region" aria-labelledby="panel-sinopsis-titulo"></div>
+        </div>
+
+        <div class="panel-botones">
+          <button type="button" class="panel-boton" data-opcion="libro">
+            <span class="panel-boton-texto">Solo el libro</span>
+            <span class="panel-boton-precio"></span>
+          </button>
+          <button type="button" class="panel-boton" data-opcion="cajita">
+            <span class="panel-boton-texto">Con cajita</span>
+            <span class="panel-boton-precio"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </dialog>
+
    <footer>
         <div class="footer-marca">
             <img src="imagenes/logo-footer.svg" alt="Blooming, Café & Libros" class="footer-logo">
@@ -121,5 +234,6 @@
             <button type="button" class="carrito-checkout" id="carrito-checkout">Finalizar pedido</button>
         </div>
     </aside>
+    <script src="script.js"></script>
 </body>
 </html>
