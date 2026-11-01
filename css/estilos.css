@@ -48,6 +48,8 @@
 
   --marco-ondulado: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='138' height='138' viewBox='0 0 138 138'%3E%3Cdefs%3E%3Cpath id='h' d='M23 23q11.5-8.4 23 0t23 0t23 0t23 0'/%3E%3Cpath id='v' d='M23 23q-8.4 11.5 0 23t0 23t0 23t0 23'/%3E%3C/defs%3E%3Cg fill='none' stroke='%239B2C2C' stroke-width='1.6'%3E%3Cuse href='%23h' y='-1.4'/%3E%3Cuse href='%23h' y='1.4'/%3E%3Cuse href='%23h' y='90.6'/%3E%3Cuse href='%23h' y='93.4'/%3E%3Cuse href='%23v' x='-1.4'/%3E%3Cuse href='%23v' x='1.4'/%3E%3Cuse href='%23v' x='90.6'/%3E%3Cuse href='%23v' x='93.4'/%3E%3C/g%3E%3C/svg%3E");
 
+  --onda-horizontal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='14' viewBox='0 0 46 14'%3E%3Cg fill='none' stroke='%239B2C2C' stroke-width='1.6'%3E%3Cpath d='M0 5q11.5-8.4 23 0t23 0'/%3E%3Cpath d='M0 7.8q11.5-8.4 23 0t23 0'/%3E%3C/g%3E%3C/svg%3E");
+
 }
 
 /* #endregion */
@@ -232,7 +234,7 @@ body > header {
   align-items: center;
   gap: 0.25rem;
   flex: 1 1 auto;
-  min-width: 0;
+  min-width: 8rem;
   max-width: 22rem;
   margin-inline: auto;
   padding: 0.25rem 0.75rem;
@@ -270,6 +272,7 @@ body > header {
 /* Enlaces principales (solo en pantallas grandes) */
 .nav-principal {
   display: none;
+  flex-shrink: 0;
 }
 
 .nav-principal ul {
@@ -286,6 +289,7 @@ body > header {
   color: var(--espresso);
   border-bottom: 3px solid transparent;
   transition: border-color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-principal a:hover {
@@ -336,8 +340,28 @@ body > header {
     --altura-header: 3.75rem;
   }
 
+  body > header {
+    gap: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+
   .logo-header {
     height: 3.25rem;
+  }
+
+  .buscador {
+    min-width: 0;      /* ← lo importante: ahora puede encogerse */
+    margin-inline: 0;
+  }
+
+  .encabezado-iconos {
+    gap: 0;
+  }
+
+  .menu-hamburguesa,
+  .encabezado-iconos button {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 }
 
@@ -356,6 +380,30 @@ body > header {
   .buscador {
     position: relative;
     left: 2rem;
+  }
+}
+
+/* Pantallas medianas: todo más compacto para que quepa */
+@media (min-width: 900px) and (max-width: 1199px) {
+  body > header {
+    gap: var(--espacio-2);
+  }
+
+  .nav-principal ul {
+    gap: 1.25rem;
+  }
+
+  .nav-principal a {
+    font-size: 0.9rem;
+    gap: 0.3rem;
+  }
+
+  .buscador {
+    max-width: 14rem;
+  }
+
+  .logo-header {
+    height: 3.25rem;
   }
 }
 
@@ -406,13 +454,15 @@ body > header {
 .hero-contenido {
   position: relative;
   isolation: isolate;
+  container-type: inline-size;
+  aspect-ratio: 1080 / 607;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: min(94%, 32rem);  /* ← el tamaño de la tarjeta */
+  width: min(94%, 32rem);
   margin: auto;
-  padding: 2.75rem 2.25rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -429,56 +479,39 @@ body > header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  width: 100%;
+  gap: 1.7cqw;
 }
 
 .hero-saludo {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 3.3cqw, 1.5rem);
   font-style: italic;
   font-weight: 400;
 }
 
 .logo-hero {
-  width: 100%;
-  max-width: 13rem;
+  width: 58cqw;
+  max-width: none;
   height: auto;
+  margin-block: -4.5cqw -6.5cqw;
 }
 
 .hero-contenido .boton {
-  margin-top: 0.75rem;
-  padding: 0.7rem 1.4rem;
-  font-size: 0.9rem;
+  margin-top: 4cqw;
+  padding: 1em 2em;
+  font-size: clamp(0.78rem, 3cqw, 1.3rem);
   white-space: nowrap;
 }
 
 /* Desde 600 px: el marco guarda su proporción y el contenido se escala con él */
-@media (min-width: 600px) {
+@media (max-width: 599px) {
   .hero-contenido {
-    container-type: inline-size;
-    aspect-ratio: 1080 / 607;
-    padding: 0;
-  }
-
-  .hero-contenido h1 {
-    gap: 1.7cqw;
-    width: auto;
-  }
-
-  .hero-saludo {
-    font-size: clamp(0.8rem, 3.3cqw, 1.5rem);
-  }
-
-  .logo-hero {
-    width: 58cqw;
-    max-width: none;
-    margin-block: -4.5cqw -6.5cqw;
+    width: 100%;
   }
 
   .hero-contenido .boton {
-    margin-top: 4cqw;
-    padding: 1em 2em;
-    font-size: clamp(0.78rem, 3cqw, 1.3rem);
+    margin-top: 2.5cqw;
+    padding: 0.6em 1.3em;
+    font-size: 0.78rem;
   }
 }
 
@@ -990,6 +1023,46 @@ body > header {
   }
 }
 
+/* Hoja sobre olivo liso */
+@media (max-width: 599px) {
+  .sobre-nosotros {
+    padding: 1rem 0.75rem;
+    background: var(--olive);
+  }
+
+  .sobre-tarjeta {
+    margin-inline: 0;
+    padding: 3.25rem 1.5rem 3rem;
+    border-radius: 0.25rem;
+    box-shadow: var(--sombra-tarjeta);
+  }
+
+  .sobre-tarjeta::before {
+    display: none;                  
+  }
+
+  .sobre-tarjeta h2 {
+    margin-bottom: 0.9rem;
+  }
+
+  .sobre-tarjeta > p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-indent: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nombre-en-texto {
+    font-size: 1.9rem;
+  }
+
+  .carrusel-sobre-nosotros {
+    margin-top: 2.5rem;
+    margin-inline: -1rem;
+    padding-inline: 2.5rem;
+  }
+}
+
 /* #endregion */
 
 /* #region CONTACTO */
@@ -1254,3 +1327,458 @@ body > footer {
 }
 
 /* #endregion */
+
+/* #region MENÚ: HERO */
+
+.menu-hero {
+  /* Alto del hero = pantalla - header - cintillo.
+     Todo el dibujo se mide en proporción a --h */
+  --alto-cintillo: 4.5rem;
+  --h: min(clamp(28rem, calc(100svh - var(--altura-header) - var(--alto-cintillo)), 46rem), 115vw);
+  --saliente: 0.17; /* cuánto sobresale la cápsula arriba y abajo (proporción de --h) */
+  --acercar-dibujos: 0.025; 
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: var(--h);
+  overflow-x: clip; /* la franja usa 100vw y no debe crear scroll horizontal */
+  background: repeating-linear-gradient(
+    90deg,
+    var(--olive) 0 1.4rem,
+    var(--beige) 1.4rem 2.8rem
+  );
+}
+
+/* Forma 2: el rectángulo. Las formas 1 y 3 salen de ::before y ::after */
+.menu-hero-tarjeta {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--h) * 0.636);
+  height: calc(var(--h) * 0.511);
+  padding: 0 var(--espacio-2);
+  background-color: var(--beige);
+  text-align: center;
+  /* una sola sombra suave para toda la silueta */
+  filter: drop-shadow(0 0.5rem 1rem rgb(70 32 20 / 0.3));
+}
+
+.menu-hero-tarjeta::before,
+.menu-hero-tarjeta::after {
+  content: "";
+  position: absolute;
+  z-index: -1; /* detrás del texto, delante del fondo de rayas */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--beige);
+}
+
+/* Forma 3: la cápsula vertical */
+.menu-hero-tarjeta::before {
+  width: calc(var(--h) * 0.343);
+  height: calc(var(--h) * (0.511 + 2 * var(--saliente)));
+  border-radius: var(--radio-pildora);
+}
+
+/* Forma 1: la franja de lado a lado */
+.menu-hero-tarjeta::after {
+  width: 100vw;
+  height: calc(var(--h) * 0.379);
+}
+
+/* Dibujos recortados, centrados en la parte de la cápsula que sobresale */
+.menu-hero-icono {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  object-fit: contain;
+}
+
+.menu-hero-icono-arriba {
+  top: calc(var(--h) * (-0.5 * var(--saliente) - 0.065 + var(--acercar-dibujos)));
+  height: calc(var(--h) * 0.13);
+}
+
+.menu-hero-icono-abajo {
+  bottom: calc(var(--h) * (-0.5 * var(--saliente) - 0.0575 + var(--acercar-dibujos)));
+  height: calc(var(--h) * 0.115);
+}
+
+.menu-hero .hero-titulo {
+  margin: 0;
+  font-family: var(--fuente-logo);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.menu-hero .hero-el {
+  display: block;
+  font-size: calc(var(--h) * 0.07);
+}
+
+.menu-hero .hero-menu {
+  display: block;
+  margin-top: 0.1em;
+  font-size: calc(var(--h) * 0.125);
+}
+
+.menu-hero-lema {
+  margin: 1.25rem 0 0.25rem;
+  font-size: clamp(1rem, calc(var(--h) * 0.03), 1.4rem);
+  text-wrap: balance;
+}
+
+.menu-hero-aviso {
+  font-size: clamp(0.8rem, calc(var(--h) * 0.019), 0.95rem);
+  color: var(--bordeaux);
+}
+
+@media (min-width: 600px) {
+  .menu-hero-tarjeta {
+    padding-inline: var(--espacio-3);
+  }
+}
+
+/* #endregion */
+
+/* #region MENÚ: CINTILLO SAND */
+
+.separador-sand {
+  background-color: var(--sand);
+  color: var(--espresso);
+}
+
+.separador-sand .separador-separar {
+  font-family: var(--fuente-texto);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.separador-sand .separador-track {
+  animation-name: separador-desplazar-mitad;
+}
+
+@keyframes separador-desplazar-mitad {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* #endregion */
+
+/* #region MENÚ: MARCO Y TÍTULOS */
+
+.menu-marco {
+  --ancho-menu: 56rem;
+
+  position: relative;
+  background-color: var(--beige);
+  border: solid var(--olive);
+  border-width: 1rem clamp(0.75rem, 3.5vw, 3.1rem) 0.75rem;
+  padding: 3.5rem 2.5rem;
+}
+
+/* Doble línea del marco */
+.menu-marco::before,
+.menu-marco::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--espresso);
+  pointer-events: none;
+}
+
+.menu-marco::before { inset: 0.75rem; }
+.menu-marco::after  { display: none; }
+
+.menu-marco section + section { margin-top: var(--espacio-5); }
+
+.menu-marco h2 {
+  width: min(100%, var(--ancho-menu));
+  margin: 0 0 var(--espacio-3);
+  padding-bottom: 0.35rem;
+  border-bottom: 1.5px solid var(--espresso);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+/* Combos y Especiales van centrados; las demás categorías, a la izquierda */
+.menu-combos h2,
+#especiales h2 {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.menu-subtitulo {
+  margin-bottom: var(--espacio-4);
+  text-align: center;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+@media (min-width: 600px) {
+  .menu-marco { padding: 5rem clamp(3.5rem, 7vw, 6rem); }
+  .menu-marco::before { inset: 2rem; }
+  .menu-marco::after  { display: block; inset: 2.75rem; }
+}
+
+/* #endregion */
+
+/* #region MENÚ: LISTAS DE PRODUCTOS */
+
+.menu-lista {
+  max-width: var(--ancho-menu);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+}
+
+.menu-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-item-nombre {
+  font-size: 1.15rem;
+}
+
+.menu-item-descripcion {
+  margin-top: 0.35rem;
+  max-width: 34rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.menu-item-precio {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Etiquetas dietéticas: una sola píldora por producto */
+.menu-item-etiquetas {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.85rem;
+  border-radius: var(--radio-medio); /* en celular se parten en varias líneas */
+  background-color: var(--sand);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+  .menu-item {
+    gap: var(--espacio-2);
+  }
+
+  .menu-item-etiquetas {
+    border-radius: var(--radio-pildora);
+  }
+}
+
+/* #endregion */
+
+/* #region MENÚ: CARRUSELES (combos y especiales) */
+
+/* La base (.carrusel, -contenedor, -track, -item, flechas y puntos)
+está en LIBROS DEL MES. Aquí solo lo propio del menú. */
+
+/* Celular: tarjetas a todo el ancho; flechas abajo, junto a los puntitos */
+.carrusel-combos,
+.carrusel-especiales {
+  --margen-item: 0.75rem; /* separación entre tarjetas (la mitad por lado) */
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+/* El padding vertical deja espacio para que la sombra no se corte */
+.carrusel-combos .carrusel-contenedor,
+.carrusel-especiales .carrusel-contenedor {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  padding-block: 0.75rem 1.5rem;
+}
+
+.carrusel-combos .carrusel-flecha-izq,
+.carrusel-especiales .carrusel-flecha-izq { grid-column: 1; grid-row: 2; }
+
+.carrusel-combos .carrusel-flecha-der,
+.carrusel-especiales .carrusel-flecha-der { grid-column: 3; grid-row: 2; }
+
+.carrusel-combos .carrusel-indicadores,
+.carrusel-especiales .carrusel-indicadores {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0;
+}
+
+/* Cada casilla sigue midiendo 100% / --visibles: el margen sale de dentro */
+.carrusel-combos .carrusel-item,
+.carrusel-especiales .carrusel-item {
+  flex: 0 0 calc(100% / var(--visibles) - 2 * var(--margen-item));
+  margin-inline: var(--margen-item);
+  background-color: var(--beige);
+  box-shadow: var(--sombra-suave-chica);
+}
+
+/* Punto activo en olive, como en tu referencia */
+.carrusel-combos .carrusel-indicador.activo,
+.carrusel-especiales .carrusel-indicador.activo {
+  border-color: var(--olive);
+  background-color: var(--olive);
+}
+
+/* Combos más compactos: el carrusel no ocupa todo el ancho del marco */
+.carrusel-combos {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+/* Tablet: 2 tarjetas (las flechas siguen abajo) */
+@media (min-width: 700px) {
+  .carrusel-combos,
+  .carrusel-especiales { --visibles: 2; }
+}
+
+/* Las flechas pasan a los lados */
+@media (min-width: 800px) {
+  .carrusel-combos,
+  .carrusel-especiales { column-gap: var(--espacio-2); }
+
+  .carrusel-combos .carrusel-contenedor,
+  .carrusel-especiales .carrusel-contenedor {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .carrusel-combos .carrusel-flecha-izq,
+  .carrusel-especiales .carrusel-flecha-izq { grid-row: 1; }
+
+  .carrusel-combos .carrusel-flecha-der,
+  .carrusel-especiales .carrusel-flecha-der { grid-row: 1; }
+}
+
+/* Computador: 3 tarjetas */
+@media (min-width: 1100px) {
+  .carrusel-combos,
+  .carrusel-especiales { --visibles: 3; }
+}
+
+/* #endregion */
+
+/* #region MENÚ: TARJETAS DE COMBOS */
+
+.combo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 0.7rem solid var(--sand);
+}
+
+.combo-nombre {
+  margin-bottom: 0.6rem;
+  text-align: center;
+  font-family: var(--fuente-maquina);
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+/* Descripción a la izquierda, precio a la derecha */
+.combo-fila {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.combo-detalle {
+  flex: 1;
+  line-height: 1.35;
+}
+
+.combo .menu-item-precio { font-size: 1.05rem; }
+
+/* Descripción a la izquierda y precio a la derecha */
+@media (min-width: 600px) {
+  .combo-fila {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+    text-align: left;
+  }
+}
+
+/* Con 2 o más tarjetas a la vez, todas del mismo tamaño */
+@media (min-width: 700px) {
+  .combo {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* #endregion */
+
+/* #region MENÚ: TARJETAS DE ESPECIALES */
+
+.especial {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto minmax(1.9rem, auto);
+  justify-items: center;
+  row-gap: 0.5rem;
+  padding: var(--espacio-2) 1.25rem 1rem;
+  border: 0.7rem solid var(--olive);
+  text-align: center;
+}
+
+.especial-nombre {
+  font-family: var(--fuente-maquina);
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+/* Reserva el alto de dos líneas para que la descripción siempre empiece igual */
+.especial-cita {
+  min-height: 2.6em;
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--bordeaux);
+}
+
+.especial-descripcion {
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+/* El precio de los especiales va en píldora sand */
+.especial .menu-item-precio {
+  padding: 0.1rem 1.1rem;
+  border-radius: var(--radio-pildora);
+  background-color: var(--sand);
+}
+
+.especial .menu-item-etiquetas {
+  align-self: start;
+  margin-top: 0;
+}
+
+/* #endregion */
+

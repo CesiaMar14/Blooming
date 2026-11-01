@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,42 +77,165 @@
         </nav>
    </header>
     <main>        
-        <section id="eventos" class="eventos">
-            <div class="eventos-intro">
-                <h2>Eventos</h2>
-                <p>Participa en nuestros eventos, que van desde clubes de lectura, talleres de escritura y presentaciones de libros, hasta exposiciones, charlas y talleres.</p>
-                <p>Descubre nuevas oportunidades para aprender eligiendo una fecha en nuestro calendario para que puedas ver los eventos programados y su disponibilidad.</p>
-            </div>
+        <section class="eventos-intro">
+            <h1>Eventos</h1>
+            <p>Mira, escoge y disfruta de nuestras diferentes actividades.</p>
+            <p>¡Te esperamos, solo faltas tú!</p>
+        </section>
 
-            <div class="calendario" id="calendario-eventos">
-                <div class="calendario-header">
-                    <button class="calendario-nav calendario-nav-anterior" id="mes-anterior" aria-label="Mes anterior">&#10094;</button>
-                    <h3 class="calendario-mes" id="calendario-mes"></h3>
-                    <button class="calendario-nav calendario-nav-siguiente" id="mes-siguiente" aria-label="Mes siguiente">&#10095;</button>
+        <section class="eventos-contenido">
+        <!-- Panel de información (estado inicial: ninguna fecha seleccionada) -->
+            <aside class="eventos-info" id="dia-detalle" aria-live="polite">
+                <h2>Información</h2>
+                <p>Presiona alguna de nuestras fechas para ver más información.</p>
+            </aside>
+
+            <!-- Calendario + leyenda -->
+            <div class="eventos-calendario-columna" id="calendario" data-mes-inicial="2026-11" data-mes-final="2027-11">
+
+                <!-- Navegación de meses -->
+                <div class="calendario-nav">
+                    <button type="button" class="calendario-flecha" id="mes-anterior" aria-label="Mes anterior" disabled>
+                        <i class="ti ti-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <h2 class="calendario-titulo" id="calendario-titulo" aria-live="polite">Noviembre 2026</h2>
+                    <button type="button" class="calendario-flecha" id="mes-siguiente" aria-label="Mes siguiente">
+                        <i class="ti ti-chevron-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
-                <div class="calendario-dias-semana">
-                    <span>Lun</span>
-                    <span>Mar</span>        
-                    <span>Mié</span>
-                    <span>Jue</span>
-                    <span>Vie</span>
-                    <span>Sáb</span>
-                    <span>Dom</span>
+                <div class="eventos-calendario">
+                    <div class="calendario-mes" id="calendario-grid" role="group" aria-labelledby="calendario-titulo">
+                        <div class="calendario-dia-semana">Dom</div>
+                        <div class="calendario-dia-semana">Lun</div>
+                        <div class="calendario-dia-semana">Mar</div>
+                        <div class="calendario-dia-semana">Mié</div>
+                        <div class="calendario-dia-semana">Jue</div>
+                        <div class="calendario-dia-semana">Vie</div>
+                        <div class="calendario-dia-semana">Sáb</div>
+                    </div>
                 </div>
 
-                <div class="calendario-grid" id="calendario-grid"></div>
-            </div>
-
-            <div class="dia-detalle" id="dia-detalle" hidden>
-                <button class="cerrar-dia-detalle" id="cerrar-dia-detalle" aria-label="Cerrar detalles del día">
-                    <i class="ti ti-x" aria-hidden="true"></i>
-                </button>
-                <h3 id="dia-detalle-fecha"></h3>
-                <div id="dia-detalle-lista" class="dia-detalle-lista"></div>
+                <ul class="calendario-leyenda">
+                    <li>
+                        <img src="imagenes/sello-club.svg" alt="Sello de club de lectura">
+                        <span>Club de lectura</span>
+                        <a class="boton-evento boton-como" href="#club-metodologia">¿Cómo funciona?</a>
+                    </li>
+                    <li>
+                        <img src="imagenes/sello-evento.svg" alt="Sello de evento">
+                        <span>Otros eventos</span>
+                    </li>
+                </ul>
             </div>
         </section>
-</main>
+
+        <!-- Metodología del club -->
+        <section class="club-metodologia" id="club-metodologia" aria-labelledby="club-titulo">
+            <h2 id="club-titulo">¿Cómo funciona el club de lectura?</h2>
+
+            <ol class="club-pasos">
+                <li>
+                    <h3>Un libro al mes</h3>
+                    <p>Cada mes Blooming escoge un libro y la lectura empieza el primer día de cada mes.</p>
+                </li>
+                <li>
+                    <h3>Metas semanales</h3>
+                    <p>Ponemos una meta de lectura por semana y vamos conversando sobre el libro en un grupo de WhatsApp.</p>
+                </li>
+                <li>
+                    <h3>Primera reunión, virtual</h3>
+                    <p>El día 15 nos encontramos en línea durante 2 horas para comentar cómo va el libro y compartir nuestras reflexiones.</p>
+                </li>
+                <li>
+                    <h3>Reunión final, en Blooming</h3>
+                    <p>El último sábado del mes nos vemos en nuestras instalaciones durante 2 horas, con aperitivos de café, té, galletas y torta, para conversar sobre todo el libro.</p>
+                </li>
+            </ol>
+
+            <p class="club-inscripcion">
+                La inscripción cuesta $45.000 y el cupo es de 25 personas.
+                Cuando te inscribes, te confirmamos por correo con todos los detalles del club y de la lectura.
+            </p>
+
+            <p class="club-comprar">
+                El libro no está incluido en la inscripción, pero puedes comprarlo con nosotros.
+                <a href="libros.html">Mira los libros del mes</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Estado inicial: ninguna fecha seleccionada -->
+    <template id="plantilla-vacio">
+        <h2>Información</h2>
+        <p>Presiona alguna de nuestras fechas para ver más información.</p>
+    </template>
+
+    <!-- Meses sin libro del club definido -->
+    <template id="plantilla-proximamente">
+        <h2>Información</h2>
+        <h3 class="evento-titulo">Club de Lectura</h3>
+        <p>Próximamente.</p>
+        <p>Presiona las fechas con sello para ver los otros eventos.</p>
+    </template>
+
+    <!-- Club de lectura -->
+    <template id="plantilla-club">
+        <div class="info-cabecera">
+        <h2>Información</h2>
+        <span class="estado-cupos">Cupos disponibles</span>
+        <img class="info-sello" src="imagenes/sello-club.svg" alt="Sello del club de lectura">
+        </div>
+
+        <article class="evento-detalle">
+            <h3 class="evento-titulo">Club de Lectura - Mes de Noviembre</h3>
+            <p class="evento-fecha">Sábado 28 de nov. - 3:30 p. m.</p>
+
+            <div class="evento-cuerpo">
+                <figure class="evento-portada">
+                    <img src="imagenes/en-diciembre-llegaban-las-brisas.jpg" alt="Portada de En diciembre llegaban las brisas">
+                    <figcaption>
+                        <strong>En diciembre llegaban las brisas</strong>
+                        <span>Marvel Moreno</span>
+                    </figcaption>
+                    <a class="boton-evento" href="libros.html">Ver más del libro</a>
+                </figure>
+
+                <div class="evento-descripcion" tabindex="0" role="region" aria-label="Descripción del club de lectura">
+                    <p>La lectura de este mes en el club de lectura de Blooming, es “En diciembre llegaban las brisas” de la autora barranquillera, Marvel Moreno.</p>
+                    <p>Si tienes interés en inscribirte, la inscripción cuesta $45.000 y el cupo es de 25 personas. El libro no está incluido, pero puedes comprarlo con nosotros.</p>
+                </div>
+            </div>
+
+            <button type="button" class="boton-carrito-evento" data-id="club-2026-11" data-nombre="Club de lectura - Noviembre" data-precio="45000">Agregar al carrito</button>
+        </article>
+    </template>
+
+    <!-- Otros eventos -->
+    <template id="plantilla-evento">
+        <div class="info-cabecera">
+            <h2>Información</h2>
+            <span class="estado-cupos">Cupos disponibles</span>
+            <img class="info-sello" src="imagenes/sello-evento.svg" alt="Sello de evento">
+        </div>
+
+        <article class="evento-detalle">
+            <h3 class="evento-titulo">Nombre del evento</h3>
+            <p class="evento-fecha">Día y hora del evento</p>
+
+            <div class="evento-cuerpo">
+                <img class="evento-logo" src="imagenes/sello-evento.svg" alt="Sello de evento">
+
+                <div class="evento-descripcion" tabindex="0" role="region" aria-label="Descripción del evento">
+                <p>Descripción corta del evento.</p>
+                <p>Costo y cupo del evento.</p>
+                </div>
+            </div>
+
+            <button type="button" class="boton-carrito-evento" data-id="evento-ejemplo" data-nombre="Nombre del evento" data-precio="0">Agregar al carrito</button>
+        </article>
+    </template>
+
     <footer>
         <div class="footer-marca">
             <img src="imagenes/logo-footer.svg" alt="Blooming, Café & Libros" class="footer-logo">
